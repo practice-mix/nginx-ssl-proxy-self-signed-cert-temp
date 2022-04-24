@@ -35,8 +35,10 @@ spec:
           volumeMounts:
             - mountPath: /etc/nginx/conf.d
               name: nginx-claim0
+              subPath: config
             - mountPath: /secrets
               name: nginx-claim1
+              subPath: secrets
               readOnly: true
       restartPolicy: Always
       volumes:

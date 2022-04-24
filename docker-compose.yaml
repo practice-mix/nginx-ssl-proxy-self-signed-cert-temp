@@ -7,8 +7,8 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./config:/etc/nginx/conf.d
-      - ./secrets:/secrets:ro
+      - ./mnt/config:/etc/nginx/conf.d
+      - ./mnt/secrets:/secrets:ro
 
     networks:
       - app
