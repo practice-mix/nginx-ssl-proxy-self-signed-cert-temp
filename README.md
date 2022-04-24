@@ -1,7 +1,21 @@
 # equivalent k8s resource to docker compose file
 
+note: kompose converted k8s resources is not applicable
+
 ```shell
 kompose convert -f .\docker-compose.yaml -o ./k8s/ 
+```
+
+run:
+
+```shell
+kubectl apply -f ./k8s/
+```
+
+clean:
+
+```shell
+kubectl delete -f ./k8s/
 ```
 
 # gen certificate

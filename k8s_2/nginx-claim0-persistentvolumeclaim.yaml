@@ -6,8 +6,13 @@ metadata:
     io.kompose.service: nginx-claim0
   name: nginx-claim0
 spec:
+  selector:
+    matchLabels:
+      app: nginx
+  #  storageClassName: manual0
+  storageClassName: local-storage
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 100Mi

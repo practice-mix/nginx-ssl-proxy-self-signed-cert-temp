@@ -34,16 +34,19 @@ spec:
           resources: { }
           volumeMounts:
             - mountPath: /etc/nginx/conf.d
-              name: host-path-volume
+              name: nginx-claim0
               subPath: config
             - mountPath: /secrets
-              name: host-path-volume
+              #              name: nginx-claim1
+              name: nginx-claim0
               subPath: secrets
-              readOnly: true
+      #              readOnly: true
       restartPolicy: Always
       volumes:
-        - name: host-path-volume
-          hostPath:
-            path: 'D:/temp/nginx-reverse-proxy-temp/nginx-ssl-proxy-self-signed-cert-temp/mnt'
-            type: Directory
-
+        - name: nginx-claim0
+          persistentVolumeClaim:
+            claimName: nginx-claim0
+#        - name: nginx-claim1
+#          persistentVolumeClaim:
+#            claimName: nginx-claim1
+#            readOnly: true
