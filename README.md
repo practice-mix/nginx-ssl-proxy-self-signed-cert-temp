@@ -21,7 +21,7 @@ kubectl delete -f ./k8s/
 # gen certificate
 
 ```shell
-openssl req  -subj '//CN=localhost.org'  -addext "subjectAltName = DNS:localhost.org"  -x509 -sha256 -nodes -days 10000 -newkey rsa:2048 -keyout self.key -out self.crt
+openssl req  -subj '//CN=localhost.org'  -addext "subjectAltName = DNS:localhost.org"  -x509 -sha256 -nodes -days 10000 -newkey rsa:2048 -keyout localhost.org.key -out localhost.org.crt
 
 ```
 
