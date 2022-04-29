@@ -36,14 +36,16 @@ spec:
             - mountPath: /etc/nginx/conf.d
               name: host-path-volume
               subPath: config
+              mountPropagation: HostToContainer
             - mountPath: /secrets
               name: host-path-volume
               subPath: secrets
               readOnly: true
+              mountPropagation: HostToContainer
             - mountPath: /www
               name: host-path-volume
               subPath: www
-              readOnly: true
+              mountPropagation: HostToContainer
       restartPolicy: Always
       volumes:
         - name: host-path-volume
