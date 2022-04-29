@@ -40,10 +40,13 @@ spec:
               name: host-path-volume
               subPath: secrets
               readOnly: true
+            - mountPath: /www
+              name: host-path-volume
+              subPath: www
+              readOnly: true
       restartPolicy: Always
       volumes:
         - name: host-path-volume
           hostPath:
-            path: 'D:/temp/nginx-reverse-proxy-temp/nginx-ssl-proxy-self-signed-cert-temp/mnt'
+            path: '/data/nginx-ssl-proxy/'  # /data/ configured in kind config file, kind mounted it to D:\kind\data
             type: Directory
-
